@@ -16,7 +16,9 @@ var arr = [10,20,30];
   Create a function named 'first' that is given 'arr' as an argument.
   Return the first item in the given array.
 */
-
+function first(arr){
+  return arr[0]
+}
 //Code Here
 
 
@@ -31,7 +33,7 @@ var arr = [40,50,60];
   Create a function named 'last' that is given 'arr' as an argument. 
   Return the last item in the given array.
 */
-
+let last = (arr) => arr[2]
 //Code Here
 
 
@@ -46,6 +48,11 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
   Create a function named 'looper' that is given family as it's only argument. 
   Loop through the given array and alert every item in the array.
 */
+function looper(family) {
+  for(let i = 0; i < family.length; i++) {
+  alert(family[i])
+  }
+}
 
 //Code Here
 
@@ -61,7 +68,11 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
   Write a function called reversedLooper that is given letters as it's only argument. 
   Loop through the given array backwards alerting every item in the array starting at the end.\
 */
-
+function reversedLooper(letters){
+for(let i = letters.length - 1; i >= 0; i--) {
+  alert(letters[i])
+  }
+}
 //Code Here
 
 
@@ -76,21 +87,16 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
   Write a function named evenFinder that is given nums as it's only argument.
   Return an array that contains the even numbers from the nums array.
 */
-
+var evenFinder = (nums) => {
+  return nums.filter(nums => {
+    return nums%2 === 0
+  })
+}
 //Code Here
-
-
-
-
-
 
 
 /////////////////////// EXTRA PRACTICE PROBLEMS BELOW ////////////////////
 ////////// MOVE ONTO NEXT SECTION BEFORE WORKING ON THESE ////////////////
-
-
-
-
 
 
 
@@ -104,7 +110,16 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
   Write a function called divider that is given one argument, numbersArray.
   Have divider return an Array with the first item in the array being the evens array (all the even values from numbersArray) and the second item in the Array being the odds array (all the odd values from numbersArray).
 */
-
+let divider = (numbersArray) => {
+  var dividedArr = []
+  dividedArr[0] = numbersArray.filter(numbersArray => {
+    return numbersArray%2 === 0
+  })
+  dividedArr[1] = numbersArray.filter(numbersArray => {
+    return numbersArray%2 === 1
+  })
+  return dividedArr 
+}
 //Code Here
 
 
@@ -125,7 +140,15 @@ var getRandomArbitrary = function() {
   Loop through the array to see if that random number is in the array. 
   If it is, return true, if it's not, return false
 */
-
+let finder = (arr) => {
+  let num = getRandomArbitrary();
+  for (let i=0;i<arr.length;i++){
+    if(arr[i] === num){
+      return true
+    }
+  }
+  return false
+}
 //Code Here
 
 
@@ -156,7 +179,25 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+let removeItem = (myGroceryList,item) => {
+  if (!item){
+    return []
+  }
+  if (myGroceryList.indexOf(item)>= 0 && myGroceryList){
+    myGroceryList.splice(myGroceryList.indexOf(item),1)
+  }
+  return myGroceryList
+}
 
+let addItem = (myGroceryList,item) => {
+  if (!item || !myGroceryList){
+    return []
+  }
+  if (myGroceryList){
+    myGroceryList.push(item);
+  }
+  return myGroceryList
+}
 
 
 ////////// PROBLEM 9 //////////
